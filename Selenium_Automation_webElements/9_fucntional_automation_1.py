@@ -12,13 +12,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 # driver = wd.Edge()
 # driver = wd.Firefox()
 
-browser = "chrome"
+browser = "edge"
 driver = ""
 if browser.lower() == "chrome".lower():
-    url = Service(r"C:\Users\siddh\PycharmProjects\pythonProject\webdrivers\chromedriver-win64\chromedriver.exe")
+    url = Service(r"/webdrivers/chromedriver-win64/chromedriver.exe")
     driver = wd.Chrome(service=url)
 elif browser.lower() == "edge".lower():
-    url = Service(r"C:\Users\siddh\PycharmProjects\pythonProject\webdrivers\edgedriver_win64\msedgedriver.exe")
+    url = Service(r"/webdrivers/edgedriver_win64/msedgedriver.exe")
     driver = wd.Edge(service=url)
 # elif browser.lower() == "firefox".lower():
 #     url = Service(r"C:\Users\siddh\PycharmProjects\pythonProject\webdrivers\geckodriver-v0.35.0-win-aarch64\geckodriver.exe")
@@ -65,5 +65,34 @@ wait.until(expected_conditions.visibility_of_element_located((By.CLASS_NAME,"pro
 code_msg = driver.find_element(By.CLASS_NAME, "promoInfo").text
 print();
 print(code_msg)
+print();
+#############################################################################################################
+#############################################################################################################
+
+# TOTAL_AMOUNT
+list_of_amts = driver.find_elements(By.CSS_SELECTOR,"tbody td:nth-child(5) .amount")
+total_sum = 0
+for amt in list_of_amts:
+    total_sum += int(amt.text)
+
+total_amt = int(driver.find_element(By.CLASS_NAME,"totAmt").text)
+print("total_sum",total_sum) ; print("total_amt",total_amt)
+assert total_amt == total_sum
+
+#############################################################################################################
+#############################################################################################################
+
+# DISCOUNT_AMOUNT
+
+discount_per = driver.find_element(By.XPATH,"//span[@class='discountPerc']").text
+discount = int(discount_per.split("%")[0])
+print("discount percentage",discount)
+
+discount_amt = total_sum - (total_sum * (discount/100))
+total_discount_amt = float(driver.find_element(By.XPATH,"//span[@class='discountAmt']").text)
+print("discount amount",discount_amt) ; print("total discount amount",total_discount_amt)
+assert discount_amt == total_discount_amt
+
+assert total_amt > total_discount_amt
 time.sleep(3)
-driver.close()
+driver.quit()

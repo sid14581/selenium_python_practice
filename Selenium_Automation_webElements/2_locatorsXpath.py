@@ -12,10 +12,10 @@ from selenium.webdriver.edge.service import Service
 browser = "chrome"
 driver = ""
 if browser.lower() == "chrome".lower():
-    url = Service(r"C:\Users\siddh\PycharmProjects\pythonProject\webdrivers\chromedriver-win64\chromedriver.exe")
+    url = Service(r"/webdrivers/chromedriver-win64/chromedriver.exe")
     driver = wd.Chrome(service=url)
 elif browser.lower() == "edge".lower():
-    url = Service(r"C:\Users\siddh\PycharmProjects\pythonProject\webdrivers\edgedriver_win64\msedgedriver.exe")
+    url = Service(r"/webdrivers/edgedriver_win64/msedgedriver.exe")
     driver = wd.Edge(service=url)
 # elif browser.lower() == "firefox".lower():
 #     url = Service(r"C:\Users\siddh\PycharmProjects\pythonProject\webdrivers\geckodriver-v0.35.0-win-aarch64\geckodriver.exe")
