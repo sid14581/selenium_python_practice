@@ -1,4 +1,4 @@
-# pytest files should start with test_
+# pytest files and methods should start with test_ and class with Test
 # Any code should wrap in methods
 import pytest
 

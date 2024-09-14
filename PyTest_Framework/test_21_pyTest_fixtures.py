@@ -12,15 +12,25 @@ import pytest
 # py.test -m <smoke> -v -s [@pytest.mark.smoke] We can mark MARK test-cases which we can run collectivily like smoke & regression testing.
 # [@pytest.mark.smoke] To Skip the test cases
 # @pytest.mark.xfail This will run the test cases irrespective of right or wrong
+# @pytest.fixture() this is similar to Before and After Tests,Methods,Suites in testNG
+# yield is used to run methods after the Main Test Case.
+# Created conftest.py file, Testcases which are used by everyfile are placed here, so that repeatation of code are avoided.
 
-def test_firstProgram():  # every method is a test case
-    print("Jai Shri Ram")
+@pytest.mark.xfail
+def test_secondProgram():
+    msg = "Hello"
+    assert msg == "Hi", "Test failed because strings are not matching"
 
 
-def test_FirstProgram():
-    print("Jai Shri Krishna")
+# @pytest.fixture()
+# def test_addition():
+#     a = 5
+#     b = 5
+#     assert 10 == a + b, "Numbers aren't Same"
+#     print(a+b,"is printing first")
+#     yield
+#     print("\nI will execute after the addingStuff method")
 
 
-@pytest.mark.smoke
-def test_addingStuffwithSpecifimaterial():
-    print("additional stuffs are added")
+def test_addingStuff(test_addition):
+    print("stuffs are added, later ")
