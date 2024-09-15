@@ -18,6 +18,6 @@ def dataDriver():
     return yo
 
 
-@pytest.fixture(params=["Chrome","Firefox","Edge",("sid","007"),("harsh","007")])
+@pytest.fixture(params=["Chrome", "Firefox", "Edge", ("sid", "007"), ("harsh", "007")])
 def crossBrowser(request):
     return request.param

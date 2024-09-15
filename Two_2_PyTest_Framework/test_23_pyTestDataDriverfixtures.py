@@ -1,6 +1,5 @@
 # pytest files and methods should start with test_ and class with Test
 # Any code should wrap in methods
-import pytest
 
 # py.test to the test files
 # py.test -v  for verbose
@@ -23,11 +22,14 @@ import pytest
 # We can also use this way to pass the values using the params options
 import pytest
 
+from pythonSelenium.Two_2_PyTest_Framework.LogBaseClass import LogBaseClass
+
+
 @pytest.mark.usefixtures("dataDriver")
-class Test_DataDriverExample:
+class Test_DataDriverExample(LogBaseClass):
     def test_profileEditing(self, dataDriver):
+        log = self.test_loggingDemo()
         print(dataDriver)
+        log.info(dataDriver)
         for i in dataDriver:
             print(i)
-
-

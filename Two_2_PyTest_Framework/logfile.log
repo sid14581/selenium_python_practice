@@ -1,0 +1,13 @@
+2024-09-15 13:06:33,728 :INFO : test_25_logging :Information statement
+2024-09-15 13:06:33,728 :WARNING : test_25_logging :Something is in warning mode
+2024-09-15 13:06:33,728 :ERROR : test_25_logging :A Major error has happend
+2024-09-15 13:06:33,728 :CRITICAL : test_25_logging :Critical issue
+########## Proper format ##########
+2024-09-15 16:39:14,322 :INFO : pythonSelenium.Two_2_PyTest_Framework.LogBaseClass :['sid', '007', 'sid007@gmail.com']
+2024-09-15 16:39:14,322 :INFO : pythonSelenium.Two_2_PyTest_Framework.LogBaseClass :['sid', '007', 'sid007@gmail.com']
+2024-09-15 16:42:01,671 :INFO : test_profileEditing :['sid', '007', 'sid007@gmail.com']
+2024-09-15 16:49:34,366 :INFO : test_profileEditing :['sid', '007', 'sid007@gmail.com']
+2024-09-15 16:49:34,374 :INFO : pythonSelenium.Two_2_PyTest_Framework.test_25_logging :Information statement
+2024-09-15 16:49:34,375 :WARNING : pythonSelenium.Two_2_PyTest_Framework.test_25_logging :Something is in warning mode
+2024-09-15 16:49:34,375 :ERROR : pythonSelenium.Two_2_PyTest_Framework.test_25_logging :A Major error has happend
+2024-09-15 16:49:34,375 :CRITICAL : pythonSelenium.Two_2_PyTest_Framework.test_25_logging :Critical issue
