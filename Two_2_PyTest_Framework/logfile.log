@@ -11,3 +11,5 @@
 2024-09-15 16:49:34,375 :WARNING : pythonSelenium.Two_2_PyTest_Framework.test_25_logging :Something is in warning mode
 2024-09-15 16:49:34,375 :ERROR : pythonSelenium.Two_2_PyTest_Framework.test_25_logging :A Major error has happend
 2024-09-15 16:49:34,375 :CRITICAL : pythonSelenium.Two_2_PyTest_Framework.test_25_logging :Critical issue
+2024-09-18 10:52:56,384 :INFO : test_profileEditing :['sid', '007', 'sid007@gmail.com']
+2024-09-18 10:54:04,327 :INFO : test_profileEditing :['sid', '007', 'sid007@gmail.com']
